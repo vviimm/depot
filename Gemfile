@@ -1,0 +1,37 @@
+source 'https://rubygems.org'
+
+gem 'rails', '4.2.3'
+gem 'pg'
+gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Assets
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+
+group :development do
+  gem "letter_opener"
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'libnotify'
+  gem 'capybara-screenshot'
+end
