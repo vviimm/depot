@@ -8,5 +8,7 @@ class StoreControllerTest < ActionController::TestCase
       assert_select '#main .entry', 3
       assert_select 'h3', 'Programming Ruby 1.9'
       assert_select '.price', /\$[,\d]+\.\d\d/
+      assert_select '.store .entry > img', 3
+      assert_select '.entry input[type=submit]', 3
   end
 end

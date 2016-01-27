@@ -12,6 +12,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development do
   gem "letter_opener"
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'childprocess'
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :test do
