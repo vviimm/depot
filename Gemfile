@@ -6,6 +6,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'bcrypt'
 
 # Assets
 gem 'sass-rails'
@@ -13,9 +14,11 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem "jquery-fileupload-rails"
 
 group :development do
   gem "letter_opener"
+  gem 'quiet_assets'
 end
 
 group :development, :test do

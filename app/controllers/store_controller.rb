@@ -1,16 +1,23 @@
 class StoreController < ApplicationController
   include CurrentCart
   before_action :set_cart
+  skip_before_action :authorize
 
   include ActionView::Helpers::TextHelper
 
   def index
-    @products = Product.order(:title)
-    @count = session_count
-    @session_greeting_msg = session_greeting
-      if @count > 5
-        flash[:notice] = @session_greeting_msg
-      end
+    if params[:set_locale]
+      redirect_to store_url(locale: params[:set_locale])
+    else
+      @products = Product.order(:title)
+    end
+
+
+    # @count = session_count
+    # @session_greeting_msg = session_greeting
+    #   if @count > 5
+    #     flash[:notice] = @session_greeting_msg
+    #   end
   end
 
   private

@@ -1,18 +1,15 @@
-# class User
-#   attr_accessor :first_name, :last_name
+class User < ActiveRecord::Base
+  after_destroy :ensure_an_admin_remains
+  validates :name, presence: true, uniqueness: true
+  validates :password, presence: true
+  has_secure_password
 
-#   def initialize(first_name, last_name)
-#     @first_name = first_name
-#     @last_name = last_name
-#   end
+  private
 
-#   def say
-#     puts "self: #{self}"
-#   end
+    def ensure_an_admin_remains
+      if User.count.zero?
+        raise "Последний пользователь не может быть удален"
+      end
+    end
 
-#   class << self
-#     def say_2
-#       puts "self: #{self}"
-#     end
-#   end
-# end
+end

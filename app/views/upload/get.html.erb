@@ -1,0 +1,7 @@
+<% form_for(:picture,
+            url: {action: 'save'},
+            html: {multipart: true}) do |form| %>
+    Комментарий:           <%= form.text_field("comment") %><br/>
+    Выложите изображение:  <%= form.file_field("uploaded_picture") %><br/>
+    <%= submit_tag("Выложить файл") %>
+<% end %>
